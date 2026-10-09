@@ -1,0 +1,76 @@
+.who-we-are {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 60px 0;  /* Adjust padding as needed */
+}
+
+/* Container for the Image and Text */
+.who-we-are-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Style for the image */
+.who-we-are-image {
+    width: 50%;
+    position: relative;
+}
+
+.who-we-are-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: static;  /* Ensures the image remains static */
+}
+
+/* Style for the text */
+.who-we-are-text {
+    width: 50%;
+    opacity: 0;  /* Initially hide the text */
+    transition: opacity 1.5s ease-in-out;  /* Smooth fade-in effect */
+}
+
+/* Text styles */
+.who-we-are-text h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    
+}
+
+.who-we-are-text p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* On Scroll, Fade-in the text */
+.who-we-are-text.visible {
+    opacity: 1;  /* Text becomes visible */
+}
+
+/* For Mobile View */
+@media (max-width: 768px) {
+    .who-we-are-container {
+        flex-direction: column-reverse;  /* Swap image and text order */
+    }
+
+    .who-we-are-image, .who-we-are-text {
+        margin-left: 20px;
+        width: 100%;  /* Ensure image and text take full width */
+    }
+
+    .who-we-are-text h2 {
+        font-size: 2rem;  /* Adjust font size for smaller screens */
+    }
+
+    .who-we-are-text p {
+        font-size: 1rem;  /* Adjust paragraph font size for mobile */
+    }
+}

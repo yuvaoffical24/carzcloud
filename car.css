@@ -1,0 +1,738 @@
+
+* {
+    max-width: 100%;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+ 
+        body {
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: none;
+        }
+        .social-links {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            padding: 10px 20px;
+        }
+        .social-links a {
+            
+            font-size: 22px;
+            padding: 10px;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .social-links a:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        .social-links a[href^="mailto"]:hover {
+            background-color: #D44638;
+            color: white;
+        }
+        .social-links a[href*="instagram"]:hover {
+            background-color: #C13584;
+            color: white;
+        }
+        .social-links a[href*="facebook"]:hover {
+            background-color: #1877F2;
+            color: white;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            position: relative;
+            z-index: 1;
+        }
+
+        #nav{
+            width: 100%;
+            height: 100%;
+        }
+        .logo {
+            width: 120px;
+            cursor: pointer;
+        }
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        
+        .nav-links a i {
+            display: none;
+        }
+        .book-btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        .book-btn:hover {
+            background-color: #0056b3;
+        }
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        
+        
+        @media (max-width: 768px) {
+            .social-links {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+                color: white;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: white;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links a i {
+                display: inline;
+            }
+            .nav-links .icons {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                padding: 10px 0;
+            }
+        }
+        
+       .hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    color: black;
+    height: 550px;
+    position: relative; /* Ensures pseudo-element is positioned correctly */
+    z-index: 0; /* Set to 0 to be below the navbar */
+}
+
+/* Add a dull overlay to just the background */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('1.jpg') no-repeat center center/cover; /* Background image */
+    filter: brightness(50%); /* Dull the background image */
+    z-index: -1; /* Ensure the overlay is behind the text */
+}
+
+/* Navbar styles */
+.navbar {
+    position: relative;
+    z-index: 10; /* Ensure navbar stays above the background */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+}
+  body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      text-align: center;
+    }
+    .form-container {
+        color: lightseagreen;
+        background: rgba(255, 255, 255, 0);
+        padding: 20px;
+        border-radius: 10px;
+        width: 450px;
+        margin-left: 150px;  /* Added margin to push the form to the right */
+        display: block;
+        order: 1; /* Order 1 for desktop */
+    }
+    .form-container i{
+        color: lightblue;
+    }
+    .form-group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        width: 40%;
+    }
+
+    input {
+        width: 40%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    select{
+        position: relative;
+        z-index: 9999; /* Makes sure the dropdown is above other content */
+        width: 40%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    .search-btn {
+        background-color: #007BFF;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-left: 85px;
+        width: 190px;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .search-btn:hover {
+        background-color: #0056b3;
+    }
+
+    .date-time {
+        display: flex;
+        gap: 10px;
+    }
+
+    
+
+    /* Booking Text */
+    .booking-text {
+        font-size: 32px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: flex-end;
+      gap: 15px;
+      padding: 10px 20px;
+  }
+  .social-links a {
+      font-size: 22px;
+      padding: 10px;
+      border-radius: 50%;
+      color: black;
+      text-decoration: none;
+      transition: 0.3s;
+  }
+  .social-links a:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+  }
+  .social-links a[href^="mailto"]:hover {
+      background-color: #D44638;
+      color: white;
+  }
+  .social-links a[href*="instagram"]:hover {
+      background-color: #C13584;
+      color: white;
+  }
+  .social-links a[href*="facebook"]:hover {
+      background-color: #1877F2;
+      color: white;
+  }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      position: relative;
+      z-index: 1;
+  }
+
+  #nav{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+  }
+  .logo {
+      width: 120px;
+      cursor: pointer;
+  }
+  .nav-links {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+  }
+  .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.3s ease;
+  }
+  .nav-links a:hover {
+      color: orange;
+  }
+  .nav-links a i {
+      display: none;
+  }
+  .book-btn {
+      background-color: #007BFF;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 18px;
+      transition: 0.3s;
+      margin-bottom: 0.7rem;
+  }
+  .book-btn:hover {
+      background-color: #0056b3;
+  }
+  
+  /* Mobile Styles */
+  .hamburger {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+  }
+  .desktop-car-links{
+      gap: 10rem;
+  }
+  
+  /* Desktop Styles */
+  @media (min-width: 769px) {
+      .desktop-car-links {
+          display: flex;
+          justify-content: center;
+          background-color: rgba(255, 255, 255, 0.8);
+          padding: 10px 20px;
+      }
+      .desktop-car-links a {
+          padding: 10px 15px;
+          color: black;
+          text-decoration: none;
+      }
+      .desktop-car-links a:hover {
+          color: orange;
+      }
+  
+      /* Horizontal line between the desktop car links */
+      .desktop-car-links a + a {
+          border-left: 1px solid #ddd; /* Adds vertical lines between links */
+      }
+  
+      /* Hide mobile car links in desktop view */
+      .mobile-car-links {
+          display: none;
+      }
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+      .social-links {
+          display: none;
+      }
+      .hamburger {
+          display: block;
+      }
+      .nav-links {
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: white;
+      }
+      .nav-links.active {
+          display: flex;
+      }
+      .nav-links a i {
+          display: inline;
+      }
+      .nav-links .icons {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          padding: 10px 0;
+      }
+  
+      /* Ensure space between links */
+      .nav-links a {
+          padding: 15px 20px;
+          text-decoration: none;
+          color: black;
+      }
+  
+      /* Horizontal line styling for mobile links */
+      .nav-links a + a {
+          border-top: 1px solid #ddd;  /* Adds horizontal lines between links */
+      }
+  
+      /* Hide desktop car links in mobile view */
+      .desktop-car-links {
+          display: none;
+      }
+      
+      /* Display car links in the hamburger menu */
+      .mobile-car-links {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+      .mobile-car-links a {
+          padding: 15px 20px;
+          text-decoration: none;
+          color: black;
+      }
+  
+      /* Horizontal lines for mobile car links */
+      .mobile-car-links a + a {
+          border-top: 1px solid #ddd;  /* Adds horizontal lines between links in mobile */
+      }
+  }
+    
+    
+    
+    /* Car Fleet Section */
+    .car-fleet {
+      text-align: left;
+      margin: 0 auto;
+      max-width: 1200px;
+      padding: 3rem 1rem;
+    }
+    .car-fleet h2 {
+      margin-left: 0;
+    }
+    .car-fleet p {
+      margin-top: 1rem;
+      line-height: 1.8;
+    }
+    .car-fleet a {
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .green-link,
+    .orange-link {
+      color: orange;
+    }
+    
+    /* Section Headings */
+    #sedan, 
+  #hatchback,
+  #suv,
+  #mpv {
+    text-align: center;
+    margin: 4rem auto 2rem auto;
+    font-size: 2.7rem;
+    max-width: 90%;
+  }
+  
+    /* Car Cards Container */
+    .car-container {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+    
+    /* Car Cards */
+    .car-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      
+    }
+    
+    .car-card:hover {
+      transform: translateY(-10px);
+    }
+    .car-card img {
+      height: 160px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .car-card hr {
+      width: 80%;
+      margin: 10px auto;
+    }
+    .car-card p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4.9px;
+      font-size: 11.8px;
+      flex-wrap: nowrap;
+    }
+    .car-card p span {
+      display: inline; /* Or inline-block */
+    }
+    .car-card h4 {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+    .car-price {
+      font-size: 1.2rem;
+      color: #28a745; /* Green color */
+      font-weight: bold;
+      margin-top: 5px;
+      margin-bottom: 10px; /* Space below the price */
+    }
+    .car-year {
+      font-size: 1rem;
+      color: #333;  /* Dark color for year */
+      margin-top: 10px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+    
+    .car-year i {
+      margin-right: 5px;  /* Space between icon and year */
+      color: black;  /* Icon color */
+    }
+    
+    /* Book Now Button */
+    .car-book-btn {
+      display: inline-block;
+      margin-top: auto;
+      padding: 10px 15px;
+      background: #ffcc00;
+      color: #222;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+    .car-book-btn:hover {
+      background: #ff9900;
+    }
+    
+    /* Vertical Line */
+    .vertical-line {
+      display: inline-block;
+      width: 2px;
+      height: 20px;
+      background-color: #555;
+      margin: 0 10px;
+    }
+    
+    /* CTA Text */
+    .cta-text {
+      text-align: left;
+      font-size: 1rem;
+      line-height: 1.6;
+      padding: 1rem;
+      margin: 0 auto 3rem;
+      max-width: 1000px;
+      color: #333;
+    }
+    .cta-text a {
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .green-link,
+    .orange-link {
+      color: orange;
+    }
+    
+    /* ========== Responsive Design ========== */
+    
+    /* Tablets */
+    @media (max-width: 992px) {
+      .car-fleet {
+        padding: 2rem 1rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    
+      #small-cars,
+      #medium-cars {
+        font-size: 1.5rem;
+        margin-left: 1rem;
+      }
+    
+      .car-container {
+        gap: 16px;
+      }
+    
+      .car-card {
+        width: 45%;
+      }
+    }
+    
+    /* Mobile Devices */
+    @media (max-width: 600px) {
+      .cars-navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+    
+      .car-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .car-card {
+        width: 90%;
+      }
+    
+      .cta-text {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+        margin: 1rem;
+      }
+    
+      #small-cars,
+      #medium-cars,
+      #large-cars,
+      #Largest-cars
+       {
+        font-size: 2.0rem;
+        text-align: center;
+      }
+    }
+    /*Footer*/
+            /*Footer*/
+            .footer {
+              background-color: #222;
+              color: #fff;
+              padding: 30px 0;
+              text-align: center;
+          }
+          .footer-top {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              margin-bottom: 20px;
+          }
+          .footer-top a{
+              text-decoration: none;
+          }
+          .footer-top h2{
+              font-size: 15px;
+          }
+          .footer-logo {
+              width: 80px;
+              height: auto;
+          }
+          .company-name {
+              font-size: 22px;
+              margin-top: 10px;
+              color: #e9f5e9;
+          }
+          .footer-container {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-around;
+              max-width: 1200px;
+              margin: auto;
+          }
+          .footer-section {
+              width: 30%;
+              margin-bottom: 20px;
+          }
+          .footer-section h3 {
+              border-bottom: 2px solid #e9f5e9;
+              display: inline-block;
+              padding-bottom: 5px;
+          }
+          .footer-section p,
+          .footer-section a {
+              color: #ccc;
+              text-decoration: none;
+              font-size: 14px;
+          }
+          .footer-section ul {
+              list-style: none;
+              padding: 0;
+          }
+          .footer-section ul li {
+              margin: 8px 0;
+          }
+          .footer-section ul li a {
+              color: #e9f5e9;
+              transition: 0.3s;
+          }
+          .footer-section ul li a:hover {
+              color: #fff;
+          }
+          .fsocial-links {
+              margin: 20px 0;
+          }
+          .fsocial-links a {
+              color: #e9f5e9;
+              font-size: 24px;
+              margin: 0 10px;
+              transition: 0.3s;
+          }
+          .fsocial-links a:hover {
+              color: #fff;
+          }
+          .footer-bottom {
+              background-color: #111;
+              padding: 10px 0;
+              font-size: 14px;
+          }
+          @media (max-width: 768px) {
+              .footer-container {
+                  flex-direction: column;
+                  align-items: center;
+                  text-align: center;
+              }
+              .footer-section {
+                  width: 80%;
+              }
+          }
+  
+    

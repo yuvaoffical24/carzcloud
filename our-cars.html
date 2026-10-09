@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Cars - Carzcloud</title>
+    <link rel="stylesheet" href="our-cars.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+  <!--Navbars-->
+  <div class="social-links">
+    <a href="mailto:example@gmail.com" target="_blank">
+        <i class="fa-solid fa-envelope"></i>
+    </a>
+    <a href="https://www.instagram.com" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com" target="_blank">
+        <i class="fa-brands fa-facebook"></i>
+    </a>
+</div>
+  <nav class="navbar" id="nav">
+    <a href="index.html">
+        <img src="logo1.png" alt="Logo" class="logo">
+    </a>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    <div class="nav-links">
+        <!-- Mobile Car Links inside Hamburger Menu -->
+        <div class="mobile-car-links">
+            <a href="#">Sedan</a>
+            <a href="#hatchback">Hatchback</a>
+            <a href="#suv">SUV</a>
+            <a href="#mpv">MPV</a>
+        </div>
+        <!-- Existing Links -->
+        <a href="our-cars.html"><i class="fa-solid fa-car"></i>Our Cars</a>
+        <a href="T&C.html"><i class="fa-solid fa-file-contract"></i>Terms & Conditions</a>
+        <a href="Aboutus.html"><i class="fa-solid fa-info-circle"></i>About Us</a>
+        
+        <a href="car.html" class="book-btn"><i class="fa-solid fa-calendar-check"></i>Book</a>
+
+        
+
+        <!-- Social Icons -->
+        <div class="icons">
+            <a href="mailto:example@gmail.com" target="_blank">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- Desktop Car Links Navbar -->
+<div class="desktop-car-links">
+    <a href="#sedan">Sedan</a>
+    <a href="#hatchback">Hatchback</a>
+    <a href="#suv">SUV</a>
+    <a href="#mpv">MPV</a>
+</div>
+
+<script>
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+</script>
+
+
+
+    
+    <section class="car-fleet">
+        <h2>Our Rental Car Fleet</h2>
+        <p><strong> Carzcloud is committed to providing top-quality rental cars with all-inclusive pricing—no hidden fees, insurance, and taxes included! Enjoy unlimited mileage and save up to 20% when you book today!</strong></p>
+        <p>We offer compact cars, SUVs, and vans with transparent pricing, no hidden charges, and excellent customer service. Whether you need an adventure-ready 4x4 or a fuel-efficient ride, Carzcloud ensures a hassle-free experience.</p>
+        <p>
+            Book your car in 
+            <a href="book.html" class="green-link">Carzcloud car rental today</a> 
+            or 
+            <a href="Aboutus.html" class="orange-link">click here</a> 
+            to about us.
+          </p>
+    </section>
+    <!--Book and Home Page -->
+
+      
+    <h3 id="sedan">SEDAN</h3>
+<div class="car-container">
+    <!-- Car 1 -->
+    <div class="car-card">
+        <img src="https://wheelz45.com/swift%20dzire.webp" alt="Car 1">
+        <h4>SWIFT DZIRE </h4>
+        <p class="car-price">₹2000/day</p> <!-- Price below car name -->
+        <hr>
+        <p>
+            <i class="fas fa-cogs"></i> Manual 
+            <span class="vertical-line"></span> 
+            <i class="fas fa-user"></i> 5 Passengers
+          </p>
+          <hr>
+          <p>
+            <i class="fas fa-suitcase"></i> 2 Suitcase 
+            <span class="vertical-line"></span> 
+            <i class="fas fa-gas-pump"></i> Petrol
+          </p>
+          <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2024</p> <!-- Year with calendar icon -->
+          
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Swift dzire">Book Now</a>
+    </div>
+    <!-- Car 2 -->
+    <div class="car-card">
+        <img src="https://wheelz45.com/Ciaz.png" alt="Car 1">
+        <h4> C I A Z (smart hybrid)</h4>
+        <p class="car-price">₹2000/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual 
+            <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 1 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2024</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Ciaz">Book Now</a>
+    </div>
+    <!-- Car 3 -->
+    <div class="car-card">
+        <img src="https://wheelz45.com/honda-amaze.jpeg" alt="Car 1">
+        <h4>HONDA AMAZE</h4>
+        <p class="car-price">₹2000/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 2 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2023</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Honda Amaze">Book Now</a>
+    </div>
+    <!-- Car 4 -->
+    <div class="car-card">
+        <img src="https://wheelz45.com/Aura.jpg" alt="Car 1">
+        <h4>A U R A</h4>
+        <p class="car-price">₹2000/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 2 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2025</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Aura">Book Now</a>
+    </div>
+    <!-- Car 5 -->
+    <div class="car-card">
+        <img src="https://wheelz45.com/tata%20tigor.webp" alt="Car 1">
+        <h4>TATA TIGOR</h4>
+        <p class="car-price">₹2000/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 2 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2025</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Tata Tigor">Book Now</a>
+    </div>
+    <!-- Car 6 -->
+    <div class="car-card">
+        <img src="https://wheelz45.com/honda%20city.jpg" alt="Car 1">
+        <h4>HONDA CITY</h4>
+        <p class="car-price">₹2000/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 2 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2025</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Honda City">Book Now</a>
+    </div>
+    <!-- Car 7 -->
+    <div class="car-card">
+        <img src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Volkswagen/Virtus/10617/1755846730435/front-left-side-47.jpg?tr=w-664" alt="Car 1">
+        <h4>Volkswagen Virtus</h4>
+        <p class="car-price">₹2000/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 2 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2026</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Volkswagen Virtus">Book Now</a>
+    </div>
+    <!-- Car 8 -->
+    <div class="car-card">
+        <img src="nissan-sunny.avif" alt="Car 1">
+        <h4>NISSAN SUNNY</h4>
+        <p class="car-price">₹2000/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 2 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Diesel</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2019</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Nissan Sunny">Book Now</a>
+    </div>
+
+    
+</div>
+<!--Hatchback-->
+<h3 id="hatchback">HATCHBACK</h3>
+<div class="car-container">
+    <!-- Car 1 -->
+    <div class="car-card">
+        <img src="swift.png" alt="Car 1">
+        <h4>S W I F T</h4>
+        <p class="car-price">₹1800/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 4 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 2 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2025</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Swift">Book Now</a>
+    </div>
+    <!-- Car 2 -->
+    <div class="car-card">
+        <img src="baleno.jpg" alt="Car 1">
+        <h4>B A L E N O</h4>
+        <p class="car-price">₹1800/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual / AMT <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i>3 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2025</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Baleno">Book Now</a>
+    </div>
+    <!-- Car 3 -->
+    <div class="car-card">
+        <img src="i20 asta.webp" alt="Car 1">
+        <h4>i20  ASTA</h4>
+        <p class="car-price">₹1800/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 2 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2026</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="i20 asta">Book Now</a>
+    </div>
+    <!-- Car 4 -->
+    <div class="car-card">
+        <img src="https://asset.autocarindia.com/static/models/colors/20260528_093647_a4f71884.png?w=728&q=75&fm=auto" alt="Car 1">
+        <h4>TATA TIAGO</h4>
+        <p class="car-price">₹1800/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 2 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol & CNG</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2025</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Wagnor">Book Now</a>
+    </div>
+
+    
+</div>
+<!--SUV-->
+<h3 id="suv">SUV</h3>
+<div class="car-container">
+    <!-- Car 1 -->
+    <div class="car-card">
+        <img src="venue-2.avif" alt="Car 1">
+        <h4>V E N U E</h4>
+        <p class="car-price">₹2300/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 3 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2023</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Venue">Book Now</a>
+    </div>
+    <!-- Car 2 -->
+    <div class="car-card">
+        <img src="https://wheelz45.com/tata%20nexan.jpg" alt="Car 1">
+        <h4>TATA NEXON (sun roof)</h4>
+        <p class="car-price">₹2300/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual / AMT<span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 3 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2023</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Tata Nexan">Book Now</a>
+    </div>
+    <!-- Car 3 -->
+    <div class="car-card">
+        <img src="https://wheelz45.com/creta-1.jpg" alt="Car 1">
+        <h4>C R E T A</h4>
+        <p class="car-price">₹2300/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 3 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2023</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Creta">Book Now</a>
+    </div>
+    <!-- Car 4 -->
+    <div class="car-card">
+        <img src="https://wheelz45.com/Fronx.jpg" alt="Car 1">
+        <h4>F R O N X(Smart Hybrid)</h4>
+        <p class="car-price">₹2300/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual / AMT <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 3 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2026</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Fronx">Book Now</a>
+    </div>
+    <!-- Car 5 -->
+    <div class="car-card">
+        <img src="https://wheelz45.com/nissan.jpg" alt="Car 1">
+        <h4>NISSAN MAGNITE</h4>
+        <p class="car-price">₹2300/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 3 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2024</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Nissan Magnite">Book Now</a>
+    </div>
+    <!-- Car 6 -->
+    <div class="car-card">
+        <img src="https://wheelz45.com/urban.jpg" alt="Car 1">
+        <h4>URBAN CRUISER</h4>
+        <p class="car-price">₹2300/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual / AMT <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 3 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2025</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Urban Cruiser">Book Now</a>
+    </div>
+
+    <!-- Car 7 -->
+    <div class="car-card">
+        <img src="https://images.financialexpressdigital.com/2022/09/mahindra-thar-updated-with-new-logo-colours-controls.jpg?w=1024" alt="Car 1">
+        <h4>T H A R (4x4)</h4>
+        <p class="car-price">₹4500/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+        <hr>
+        <p> <i class="fas fa-gas-pump"></i> Diesel</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2024</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="innova">Book Now</a>
+    </div>
+    
+    
+
+    
+</div>
+<!--MPV-->
+<h3 id="mpv">MPV</h3>
+<div class="car-container">
+    
+    <!-- Car 1 -->
+    <div class="car-card">
+        <img src="ertiga.webp" alt="Car 1">
+        <h4>E R T I G A (smart hybrid)</h4>
+        <p class="car-price">₹3000/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 7 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 2 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2024</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Ertiga">Book Now</a>
+    </div>
+    <!-- Car 2 -->
+    <div class="car-card">
+        <img src="crista.jpg" alt="Car 1">
+        <h4> C R Y S T A</h4>
+        <p class="car-price">₹4000/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 8 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 2 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Diesel</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2022</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Crista">Book Now</a>
+    </div>
+    <!-- Car 3 -->
+    <div class="car-card">
+        <img src="innova.avif" alt="Car 1">
+        <h4>I N N O V A</h4>
+        <p class="car-price">₹2700/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 8 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 3 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Diesel</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2011</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Innova">Book Now</a>
+    </div>
+
+    <!-- Car 4 -->
+    <div class="car-card">
+        <img src="xl6.webp" alt="Car 1">
+        <h4>XL 6 </h4>
+        <p class="car-price">₹3000/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 6 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 3 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2024</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="XL 6">Book Now</a>
+    </div>
+
+    <!-- Car 5 -->
+    <div class="car-card">
+        <img src="kia.webp" alt="Car 1">
+        <h4>KIA CAREANS</h4>
+        <p class="car-price">₹3000/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 8 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 3 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2024</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="KIA Careams">Book Now</a>
+    </div>
+
+    <!-- Car 6 -->
+    <div class="car-card">
+        <img src="rumion.avif" alt="Car 1">
+        <h4>R U M I O N</h4>
+        <p class="car-price">₹3000/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 7 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 3 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2024</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Rumion">Book Now</a>
+    </div>
+
+
+    <!-- Car 7 -->
+    <div class="car-card">
+        <img src="innova-Hy.png" alt="Car 1">
+        <h4>Innova Hycross</h4>
+        <p class="car-price">₹5500/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 7 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 3 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2024</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="innova">Book Now</a>
+    </div>
+      
+
+
+    
+</div>
+    <!--Contact JS-->
+    <script>
+        const phone = "9597703567";
+        const links = document.querySelectorAll('.whatsapp-link');
+      
+        links.forEach(link => {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const carName = this.getAttribute('data-car');
+            const message = `Hey, I like to book the car ${carName}`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/${phone}?text=${encodedMessage}`;
+            window.open(whatsappURL, '_blank');
+          });
+        });
+      </script>
+ <!--Footer-->
+ <footer class="footer">
+  <div class="footer-top">
+      <a href="index.html">
+      <img src="logo1.png" alt="Company Logo" class="footer-logo">
+      <h2 class="company-name">Carzcloud</h2>
+  </a>
+  </div>
+  
+  <div class="footer-container">
+      <div class="footer-section">
+          <h3>About Us</h3>
+          <p>We provide the best rental car services, ensuring comfort and affordability.</p>
+          <p>Our customers are our top priority, every time. This isn’t just a statement—it’s a promise that every team member upholds to meet and exceed customer expectations.</p>
+      </div>
+      <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="our-cars.html">Our cars</a></li>
+            <li><a href="T&C.html">Terms & Conditions</a></li>
+            <li><a href="Aboutus.html">Aboutus</a></li>
+              
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: <a href="mailto:info@yourrental.com">carzcloud.com</a></p>
+          <p>Phone: +91 9597703567</p>
+          <p></p>
+      </div>
+  </div>
+
+  <div class="fsocial-links">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/wheelz_45/profilecard/?igsh=aXlkZXZvZGpjbXlo" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/919876543210" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      
+  </div>
+
+  <div class="footer-bottom">
+      <p>&copy; 2026 Carzcloud | All Rights Reserved</p>
+  </div>
+</footer>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".car-card");
+    const footer = document.querySelector(".footer");
+
+    /* Keep everything visible if IntersectionObserver is unsupported. */
+    if (!("IntersectionObserver" in window)) {
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.remove("cars-reveal-pending");
+                entry.target.classList.add("cars-reveal-visible");
+                currentObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.08,
+        rootMargin: "0px 0px 30px 0px"
+    });
+
+    cards.forEach((card) => {
+        card.classList.add("cars-reveal-pending");
+        observer.observe(card);
+    });
+
+    if (footer) {
+        footer.classList.add("cars-footer-reveal");
+        observer.observe(footer);
+    }
+});
+</script>
+
+</body>
+</html>

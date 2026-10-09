@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+
+    <title>Car Booking</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: 'Open Sans', sans-serif;
+  background: #fff;
+  
+  padding: 20px;
+}
+
+.form-container {
+  width: 320px;
+  margin: 0 auto;
+}
+
+.form-section {
+  background: #f9f9f9;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #eee;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+label a {
+  color: #1a73e8;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.input-group {
+    display: flex;
+  gap: 25px;
+  flex-wrap: nowrap; /* force them to stay in one line */
+  justify-content: space-between;
+}
+.location-select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+.input-box {
+    flex: 1;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 6px;
+  background: #fff;
+  min-width: 0; /* important for flex to behave nicely */
+}
+
+.input-box input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+}
+
+.input-box .icon {
+  margin-right: 8px;
+  color: #e85f00;
+  font-size: 18px;
+}
+
+select,
+input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  flex: 1;
+  font-size: 14px;
+  background: #fff;
+}
+
+input[disabled] {
+  background-color: #f0f0f0;
+  color: #999;
+}
+/* Hide default calendar icon */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+}
+
+.search-btn {
+  width: 100%;
+  background: #00a000;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+    </style>
+</head>
+<body>
+    
+      <div class="form-container">
+        <div class="form-section">
+            <label for="pickup-location">Pick-up from</label>
+            <select id="pickup-location" class="location-select">
+              <option value="keflavik">Keflavik International Airport</option>
+              <option value="reykjavik">Reykjavik City Center</option>
+              <option value="akureyri">Akureyri Airport</option>
+            </select>
+          <div class="input-group">
+            <div class="input-box">
+              <span class="icon">📅</span>
+              <input type="date" id="pickup-date" value="2025-04-20">
+            </div>
+            <div class="input-box">
+              <span class="icon">⏰</span>
+              <input type="time" id="pickup-time" value="12:00">
+            </div>
+          </div>
+        </div>
+    
+        <div class="form-section">
+            <label for="dropoff-location">Dropoff to</label>
+            <select id="dropoff-location" class="location-select">
+              <option value="keflavik">Keflavik International Airport</option>
+              <option value="reykjavik">Reykjavik City Center</option>
+              <option value="akureyri">Akureyri Airport</option>
+            </select>
+            
+          <div class="input-group">
+            <div class="input-box">
+              <span class="icon">📅</span>
+              <input type="date" id="dropoff-date" value="2025-04-22">
+            </div>
+            <div class="input-box">
+              <span class="icon">⏰</span>
+              <input type="time" id="dropoff-time" value="12:00">
+            </div>
+          </div>
+        </div>
+    
+        <div class="form-section">
+          
+          <div class="input-group">
+            <select>
+              <option>All Cars</option>
+            </select>
+            
+          </div>
+        </div>
+    
+        <button class="search-btn">SEARCH</button>
+      </div>
+     
+      <script>
+        function pad(n) {
+          return n.toString().padStart(2, '0');
+        }
+      
+        function getCurrentDateTime() {
+          const now = new Date();
+          const date = now.toISOString().split('T')[0];
+          const time = `${pad(now.getHours())}:${pad(now.getMinutes())}`;
+          return { date, time };
+        }
+      
+        function setInitialValues() {
+          const { date, time } = getCurrentDateTime();
+          const pickupDate = document.getElementById('pickup-date');
+          const pickupTime = document.getElementById('pickup-time');
+          const dropoffDate = document.getElementById('dropoff-date');
+          const dropoffTime = document.getElementById('dropoff-time');
+      
+          pickupDate.value = date;
+          pickupDate.min = date;
+          pickupTime.value = time;
+      
+          dropoffDate.value = date;
+          dropoffDate.min = date;
+          dropoffTime.value = time;
+        }
+      
+        function updateDropoffMin() {
+          const pickupDate = document.getElementById('pickup-date').value;
+          const pickupTime = document.getElementById('pickup-time').value;
+          const dropoffDate = document.getElementById('dropoff-date');
+          const dropoffTime = document.getElementById('dropoff-time');
+      
+          dropoffDate.min = pickupDate;
+      
+          if (dropoffDate.value === pickupDate) {
+            dropoffTime.min = pickupTime;
+          } else {
+            dropoffTime.min = "00:00";
+          }
+        }
+      
+        window.addEventListener('DOMContentLoaded', () => {
+          setInitialValues();
+      
+          document.getElementById('pickup-date').addEventListener('change', updateDropoffMin);
+          document.getElementById('pickup-time').addEventListener('change', updateDropoffMin);
+          document.getElementById('dropoff-date').addEventListener('change', updateDropoffMin);
+        });
+      </script>
+      
+      
+    </body>
+</html>

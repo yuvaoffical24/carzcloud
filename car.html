@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Available Cars</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="car.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+   
+    /* ========== Responsive Design ========== */
+
+    /* Tablets */
+    @media (max-width: 992px) {
+      .car-container {
+        gap: 16px;
+      }
+
+      .car-card {
+        width: 45%;
+      }
+    }
+
+    /* Mobile Devices */
+    @media (max-width: 600px) {
+      .car-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .car-card {
+        width: 90%;
+      }
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+        document.querySelector('.nav-links').classList.toggle('active');
+    }
+</script>
+</head>
+<body>
+  <div class="social-links">
+    <a href="mailto:example@gmail.com" target="_blank">
+        <i class="fa-solid fa-envelope"></i>
+    </a>
+    <a href="https://www.instagram.com" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com" target="_blank">
+        <i class="fa-brands fa-facebook"></i>
+    </a>
+</div>
+<nav class="navbar" id="nav">
+    <a href="index.html">
+        <img src="logo1.png" alt="Logo" class="logo">
+    </a>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    <div class="nav-links">
+        <a href="our-cars.html" class="one"><i class="fa-solid fa-car"></i>Our Cars</a>
+        <a href="T&C.html" class="two"><i class="fa-solid fa-file-contract"></i>Terms & Conditions</a>
+        <a href="Aboutus.html" class="three"><i class="fa-solid fa-info-circle"></i>About Us</a>
+        
+        <a href="car.html" class="book-btn four"><i class="fa-solid fa-calendar-check"></i>Book</a>
+        <div class="icons">
+            <a href="mailto:example@gmail.com" target="_blank">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+
+
+  <h1>Book Your Rental Car</h1>
+  <section class="car-fleet">
+    <h2>Our Rental Car Fleet</h2>
+    <p><strong> Carscloud is committed to providing top-quality rental cars with all-inclusive pricing—no hidden fees, insurance, and taxes included! Enjoy unlimited mileage and save up to 20% when you book today!</strong></p>
+    <p>We offer compact cars, SUVs, and vans with transparent pricing, no hidden charges, and excellent customer service. Whether you need an adventure-ready 4x4 or a fuel-efficient ride, Carzcloud ensures a hassle-free experience.</p>
+    <p>
+        Book your car in 
+        <a href="book.html" class="green-link">Carzcloud car rental today</a> 
+        or 
+        <a href="Aboutus.html" class="orange-link">click here</a> 
+        to about us.
+      </p>
+</section>
+
+  <!-- Editable Form -->
+  <form id="bookingForm">
+    <div class="form-group">
+        <label for="pickup-date">Pickup Date:</label>
+        <input type="date" id="pickup-date" name="pickup-date" required>
+    </div>
+
+    <div class="form-group">
+        <label for="pickup-time">Pickup Time:</label>
+        <input type="time" id="pickup-time" name="pickup-time" required>
+    </div>
+
+    <div class="form-group">
+        <label for="dropoff-date">Dropoff Date:</label>
+        <input type="date" id="dropoff-date" name="dropoff-date" required>
+    </div>
+
+    <div class="form-group">
+        <label for="dropoff-time">Dropoff Time:</label>
+        <input type="time" id="dropoff-time" name="dropoff-time" required>
+    </div>
+
+    <div class="form-group">
+      <label for="carType">Car Type</label>
+      <select id="carTypeSelect" name="carType">
+        <option value="all">All cars</option>
+        <option value="sedan">Sedan</option>
+        <option value="suv">SUV</option>
+        <option value="mpv">MPV</option>
+        <option value="hatchback">hatchback</option>
+      </select>
+    </div>
+
+    <button type="submit" class="search-btn">Search Again</button>
+  </form>
+
+  <!-- SUV Section -->
+  <div id="suv-section" class="car-section " data-type="suv" >
+    <h4 id="suv">SUV</h4>
+    
+    <div class="car-container">
+<!-- Car 1 -->
+ 
+<div class="car-card">
+  
+  <img src="venue-2.avif" alt="Venue">
+  <h4>V E N U E</h4>
+  <p class="car-price">₹2500/day</p>
+  <hr>
+  <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+  <hr>
+  <p><i class="fas fa-suitcase"></i> 3 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+  <hr>
+  <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2023</p>
+  <a href="#" class="car-book-btn whatsapp-link" data-car="Venue">Book Now</a>
+</div>
+
+<!-- You can add more cars with the same structure and different data-car values -->
+
+
+
+
+    <!-- Car 2 -->
+    <div class="car-card">
+      <img src="tata nexan.webp" alt="Tata Nexon">
+      <h4>TATA NEXON (Sun Roof)</h4>
+      <p class="car-price">₹2500/day</p>
+      <hr>
+      <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+      <hr>
+      <p><i class="fas fa-suitcase"></i> 3 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+      <hr>
+      <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2023</p>
+      <a href="#" class="car-book-btn whatsapp-link" data-car="Tata Nexon">Book Now</a>
+    </div>
+
+    <!-- Car 3 -->
+    <div class="car-card">
+      <img src="creta.jpg" alt="Creta">
+      <h4>C R E T A</h4>
+      <p class="car-price">₹2500/day</p>
+      <hr>
+      <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+      <hr>
+      <p><i class="fas fa-suitcase"></i> 3 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+      <hr>
+      <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2023</p>
+      <a href="#" class="car-book-btn whatsapp-link" data-car="Creta">Book Now</a>
+    </div>
+  </div>
+
+
+  <!--Hatchback-->
+
+  <div id="hatchback-section" class="car-section" data-type="hatchback"> 
+    
+  <h3 id="hatchback">HATCHBACK</h3>
+  
+  <div class="car-container">
+    <!-- Car 1 -->
+    <div class="car-card">
+        <img src="swift.png" alt="Car 1">
+        <h4>S W I F T</h4>
+        <p class="car-price">₹2000/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 4 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 2 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2024</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Swift">Book Now</a>
+    </div>
+
+    <!-- Car 2 -->
+    <div class="car-card">
+        <img src="baleno.jpg" alt="Car 1">
+        <h4>B A L E N O</h4>
+        <p class="car-price">₹2000/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i>3 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol & Diesel</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2024</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Baleno">Book Now</a>
+    </div>
+
+    <!-- Car 3 -->
+    <div class="car-card">
+        <img src="i20 asta.webp" alt="Car 1">
+        <h4>i20  ASTA</h4>
+        <p class="car-price">₹2000/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 2 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Diesel</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2020</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="i20 asta">Book Now</a>
+    </div>
+
+
+    <!-- Car 4 -->
+    <div class="car-card">
+        <img src="wagnor.png" alt="Car 1">
+        <h4>W A G N O R</h4>
+        <p class="car-price">₹2000/day</p> <!-- Price below car name -->
+        <hr>
+        <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+        <hr>
+        <p><i class="fas fa-suitcase"></i> 2 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol & CNG</p>
+        <hr>
+        <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2024</p> <!-- Year with calendar icon -->
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Wagnor">Book Now</a>
+    </div>
+
+    
+</div>
+
+  </div>
+</div>
+<div id="sedan-section" class="car-section" data-type="sedan"> <h3 id="sedan">SEDAN</h3>
+  <div class="car-container">
+      <!-- Car 1 -->
+      <div class="car-card">
+          <img src="swift dzire-2.png" alt="Car 1">
+          <h4>SWIFT DZIRE </h4>
+          <p class="car-price">₹2200/day</p> <!-- Price below car name -->
+          <hr>
+          <p>
+              <i class="fas fa-cogs"></i> Manual 
+              <span class="vertical-line"></span> 
+              <i class="fas fa-user"></i> 5 Passengers
+            </p>
+            <hr>
+            <p>
+              <i class="fas fa-suitcase"></i> 2 Suitcase 
+              <span class="vertical-line"></span> 
+              <i class="fas fa-gas-pump"></i> Petrol
+            </p>
+            <hr>
+          <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2024</p> <!-- Year with calendar icon -->
+            
+          <a href="#" class="car-book-btn whatsapp-link" data-car="Swift dzire">Book Now</a>
+      </div>
+      <!-- Car 2 -->
+      <div class="car-card">
+          <img src="Ciaz.png" alt="Car 1">
+          <h4> C I A Z (smart hybrid)</h4>
+          <p class="car-price">₹2200/day</p> <!-- Price below car name -->
+          <hr>
+          <p><i class="fas fa-cogs"></i> Manual 
+              <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+          <hr>
+          <p><i class="fas fa-suitcase"></i> 1 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+          <hr>
+          <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2024</p> <!-- Year with calendar icon -->
+          <a href="#" class="car-book-btn whatsapp-link" data-car="Ciaz">Book Now</a>
+      </div>
+      <!-- Car 3 -->
+      <div class="car-card">
+          <img src="honda-amaze.jpeg" alt="Car 1">
+          <h4>HONDA AMAZE</h4>
+          <p class="car-price">₹2200/day</p> <!-- Price below car name -->
+          <hr>
+          <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 5 Passengers</p>
+          <hr>
+          <p><i class="fas fa-suitcase"></i> 2 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+          <hr>
+          <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2018</p> <!-- Year with calendar icon -->
+          <a href="#" class="car-book-btn whatsapp-link" data-car="Honda Amaze">Book Now</a>
+      </div>
+  
+      
+  </div> </div>
+<div id="mpv-section" class="car-section" data-type="mpv"> <!--MPV-->
+  <h3 id="mpv">MPV</h3>
+  <div class="car-container">
+      
+      <!-- Car 1 -->
+      <div class="car-card">
+          <img src="ertiga.webp" alt="Car 1">
+          <h4>E R T I G A (smart hybrid)</h4>
+          <p class="car-price">₹3000/day</p> <!-- Price below car name -->
+          <hr>
+          <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 7 Passengers</p>
+          <hr>
+          <p><i class="fas fa-suitcase"></i> 2 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+          <hr>
+          <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2024</p> <!-- Year with calendar icon -->
+          <a href="#" class="car-book-btn whatsapp-link" data-car="Ertiga">Book Now</a>
+      </div>
+      <!-- Car 2 -->
+      <div class="car-card">
+          <img src="crista.jpg" alt="Car 1">
+          <h4> C R I S T A</h4>
+          <p class="car-price">₹3000/day</p> <!-- Price below car name -->
+          <hr>
+          <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 8 Passengers</p>
+          <hr>
+          <p><i class="fas fa-suitcase"></i> 2 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Diesel</p>
+          <hr>
+          <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2022</p> <!-- Year with calendar icon -->
+          <a href="#" class="car-book-btn whatsapp-link" data-car="Crista">Book Now</a>
+      </div>
+      <!-- Car 3 -->
+      <div class="car-card">
+          <img src="innova.avif" alt="Car 1">
+          <h4>I N N O V A</h4>
+          <p class="car-price">₹3000/day</p> <!-- Price below car name -->
+          <hr>
+          <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 8 Passengers</p>
+          <hr>
+          <p><i class="fas fa-suitcase"></i> 3 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Diesel</p>
+          <hr>
+          <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2011</p> <!-- Year with calendar icon -->
+          <a href="#" class="car-book-btn whatsapp-link" data-car="Innova">Book Now</a>
+      </div>
+  
+      <!-- Car 4 -->
+      <div class="car-card">
+          <img src="xl6.webp" alt="Car 1">
+          <h4>XL 6 </h4>
+          <p class="car-price">₹3000/day</p> <!-- Price below car name -->
+          <hr>
+          <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 6 Passengers</p>
+          <hr>
+          <p><i class="fas fa-suitcase"></i> 3 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+          <hr>
+          <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2024</p> <!-- Year with calendar icon -->
+          <a href="#" class="car-book-btn whatsapp-link" data-car="XL 6">Book Now</a>
+      </div>
+  
+      <!-- Car 5 -->
+      <div class="car-card">
+          <img src="kia.webp" alt="Car 1">
+          <h4>KIA CAREAMS</h4>
+          <p class="car-price">₹3000/day</p> <!-- Price below car name -->
+          <hr>
+          <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 8 Passengers</p>
+          <hr>
+          <p><i class="fas fa-suitcase"></i> 3 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+          <hr>
+          <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2024</p> <!-- Year with calendar icon -->
+          <a href="#" class="car-book-btn whatsapp-link" data-car="KIA Careams">Book Now</a>
+      </div>
+  
+      <!-- Car 6 -->
+      <div class="car-card">
+          <img src="rumion.avif" alt="Car 1">
+          <h4>R U M I O N</h4>
+          <p class="car-price">₹3000/day</p> <!-- Price below car name -->
+          <hr>
+          <p><i class="fas fa-cogs"></i> Manual <span class="vertical-line"></span> <i class="fas fa-user"></i> 7 Passengers</p>
+          <hr>
+          <p><i class="fas fa-suitcase"></i> 3 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
+          <hr>
+          <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2024</p> <!-- Year with calendar icon -->
+          <a href="#" class="car-book-btn whatsapp-link" data-car="Rumion">Book Now</a>
+      </div>
+  
+        
+  
+      
+  </div>
+  </div>
+
+
+    <script>
+      //datetime-setup-js
+      document.addEventListener('DOMContentLoaded', function () {
+        const pickupDateInput = document.getElementById('pickup-date');
+        const pickupTimeInput = document.getElementById('pickup-time');
+        const dropoffDateInput = document.getElementById('dropoff-date');
+        const dropoffTimeInput = document.getElementById('dropoff-time');
+
+        // Pad single digits for time
+        function pad(n) {
+          return n < 10 ? '0' + n : n;
+        }
+
+        const now = new Date();
+
+        // Get current date and time in the correct format
+        const year = now.getFullYear();
+        const month = pad(now.getMonth() + 1); // Months are zero-based, so we add 1
+        const day = pad(now.getDate());
+        const hours = pad(now.getHours());
+        const minutes = pad(now.getMinutes());
+
+        // Format the date as YYYY-MM-DD and time as HH:MM
+        const currentDate = `${year}-${month}-${day}`;
+        const currentTime = `${hours}:${minutes}`;
+
+        // Set the min attribute to ensure users can't select a past date or time
+        pickupDateInput.min = currentDate;
+        dropoffDateInput.min = currentDate;
+
+        // Set the value of the inputs to the current date and time
+        pickupDateInput.value = currentDate;
+        pickupTimeInput.value = currentTime;
+        dropoffDateInput.value = currentDate;
+        dropoffTimeInput.value = currentTime;
+      });
+      //url-prefill-js
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+
+      // Pre-fill form
+      const pickupVal = getQueryParam("pickup");
+      const dropoffVal = getQueryParam("dropoff");
+      const carTypeVal = getQueryParam("carType");
+
+      if (pickupVal) document.getElementById("pickup-date").value = pickupVal.split("T")[0];
+      if (dropoffVal) document.getElementById("dropoff-date").value = dropoffVal.split("T")[0];
+      if (carTypeVal) document.getElementById("carType").value = carTypeVal;
+
+      // Show only matching section
+      const carSections = document.querySelectorAll('.car-section');
+carSections.forEach(section => {
+  if (section.dataset.type === carTypeVal) {
+    section.style.display = 'block'; // or 'flex' if you're using flex layout
+  } else {
+    section.style.display = 'none';
+  }
+});
+
+
+      // Form-submit-js
+      document.getElementById("bookingForm").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent form from submitting normally
+
+        const pickupDate = document.getElementById("pickup-date").value;
+        const pickupTime = document.getElementById("pickup-time").value;
+        const dropoffDate = document.getElementById("dropoff-date").value;
+        const dropoffTime = document.getElementById("dropoff-time").value;
+        const carType = document.getElementById("carType").value;
+
+        if (!pickupDate || !pickupTime || !dropoffDate || !dropoffTime || !carType) {
+          alert("Please fill in all fields!");
+          return;
+        }
+
+        const pickup = `${pickupDate}T${pickupTime}`;
+        const dropoff = `${dropoffDate}T${dropoffTime}`;
+        const query = `pickup=${encodeURIComponent(pickup)}&dropoff=${encodeURIComponent(dropoff)}&carType=${encodeURIComponent(carType)}`;
+        window.location.href = `car.html?${query}`;
+      });
+    </script>
+
+    <!--whatsapp-handler-js -->
+    <script>
+      const phoneNumber = '919597703567'; // Your WhatsApp number in international format (without +)
+    
+      // Attach click listener to all buttons with the class .whatsapp-link
+      document.querySelectorAll('.whatsapp-link').forEach(button => {
+        button.addEventListener('click', function (e) {
+          e.preventDefault();
+    
+          // Get the car name from the clicked button
+          const carName = this.getAttribute('data-car');
+    
+          // Get pickup and dropoff values
+          const pickupDate = document.getElementById("pickup-date").value;
+          const pickupTime = document.getElementById("pickup-time").value;
+          const dropoffDate = document.getElementById("dropoff-date").value;
+          const dropoffTime = document.getElementById("dropoff-time").value;
+    
+          // Format the WhatsApp message
+          const message = `Hi, I would like to book a car.\n\n Pick-Up: ${pickupDate} at ${pickupTime}\n Drop-Off: ${dropoffDate} at ${dropoffTime}\n  Selected Car: ${carName}`;
+    
+          // Create the WhatsApp URL
+          const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+          // Open WhatsApp in a new tab
+          window.open(whatsappURL, '_blank');
+        });
+      });
+    </script>
+    <!-- Cars Filterations-js-->
+    <script>
+      document.getElementById('carTypeSelect').addEventListener('change', function () {
+        const selected = this.value;
+        const sections = document.querySelectorAll('.car-section');
+    
+        sections.forEach(section => {
+          if (selected === 'all' || section.dataset.type === selected) {
+            section.style.display = 'block';
+          } else {
+            section.style.display = 'none';
+          }
+        });
+      });
+    </script>
+    <!--smooth-scroll-filter-js-->
+    <script>
+      document.getElementById("bookingForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+    
+        const selectedType = document.getElementById("carType").value;
+        const carSections = document.querySelectorAll(".car-section");
+    
+        carSections.forEach(section => {
+          if (section.dataset.type === selectedType) {
+            section.style.display = "block";
+          } else {
+            section.style.display = "none";
+          }
+        });
+    
+        const activeSection = document.querySelector(`.car-section[data-type="${selectedType}"]`);
+        if (activeSection) {
+          activeSection.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    
+      document.querySelectorAll(".whatsapp-link").forEach(button => {
+        button.addEventListener("click", function (e) {
+          e.preventDefault();
+          const carName = this.dataset.car;
+          const pickupDate = document.getElementById("pickup-date").value;
+          const pickupTime = document.getElementById("pickup-time").value;
+          const dropoffDate = document.getElementById("dropoff-date").value;
+          const dropoffTime = document.getElementById("dropoff-time").value;
+    
+          const message = `Hi! I want to book the ${carName}.\nPickup: ${pickupDate} at ${pickupTime}\nDropoff: ${dropoffDate} at ${dropoffTime}`;
+          const whatsappURL = `https://wa.me/919500423279?text=${encodeURIComponent(message)}`;
+    
+          window.open(whatsappURL, "_blank");
+        });
+      });
+    </script>
+    
+    <!--Footer-->
+     <!--Footer-->
+ <footer class="footer">
+  <div class="footer-top">
+      <a href="index.html">
+      <img src="logo1.png" alt="Company Logo" class="footer-logo">
+      <h2 class="company-name">Carscloud</h2>
+  </a>
+  </div>
+  
+  <div class="footer-container">
+      <div class="footer-section">
+          <h3>About Us</h3>
+          <p>We provide the best rental car services, ensuring comfort and affordability.</p>
+          <p>Our customers are our top priority, every time. This isn’t just a statement—it’s a promise that every team member upholds to meet and exceed customer expectations.</p>
+      </div>
+      <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="our-cars.html">Our cars</a></li>
+            <li><a href="T&C.html">Terms & Conditions</a></li>
+            <li><a href="Aboutus.html">Aboutus</a></li>
+              
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: <a href="mailto:info@yourrental.com">carzcloud.com</a></p>
+          <p>Phone: +91 9597703567</p>
+          <p></p>
+      </div>
+  </div>
+
+  <div class="fsocial-links">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/wheelz_45/profilecard/?igsh=aXlkZXZvZGpjbXlo" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/919876543210" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+  </div>
+
+  <div class="footer-bottom">
+      <p>&copy; 2026 Carzcloud | All Rights Reserved</p>
+  </div>
+</footer>
+
+
+  
+</body>
+</html>

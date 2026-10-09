@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Date & Time Picker</title>
+  <style>
+    input[type="date"],
+    input[type="time"] {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      appearance: none;
+      -webkit-appearance: none;
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator,
+    input[type="time"]::-webkit-calendar-picker-indicator {
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Select Date and Time</h2>
+
+  <label for="date">Date:</label>
+  <input type="date" id="date">
+
+  <br><br>
+
+  <label for="time">Time:</label>
+  <input type="time" id="time">
+
+</body>
+</html>

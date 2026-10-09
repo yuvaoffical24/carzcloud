@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terms and Conditions</title>
+
+  <!-- Font Awesome CDN for Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+
+     * {
+    max-width: 100%;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+ 
+        body {
+          font-weight: bold;
+          font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: none;
+        }
+        .social-links {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            padding: 10px 20px;
+        }
+        .social-links a {
+            width: 45px;
+            height: 50px;
+            font-size: 22px;
+            padding: 10px;
+            border-radius: 50%;
+            color: black;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .social-links a:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        .social-links a[href^="mailto"]:hover {
+            background-color: #D44638;
+            color: white;
+        }
+        .social-links a[href*="instagram"]:hover {
+            background-color: #C13584;
+            color: white;
+        }
+        .social-links a[href*="facebook"]:hover {
+            background-color: #1877F2;
+            color: white;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            position: relative;
+            z-index: 1;
+        }
+
+        #nav{
+          width: 100%;
+          height: 100%;
+          background-color: #000;
+        }
+        .logo {
+            width: 120px;
+            cursor: pointer;
+        }
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .nav-links a i {
+            display: none;
+        }
+        .book-btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        .book-btn:hover {
+            background-color: #0056b3;
+        }
+        .hamburger {
+            display: none;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        
+        
+        @media (max-width: 768px) {
+            .social-links {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: black;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links a i {
+                display: inline;
+            }
+            .nav-links .icons {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                padding: 10px 0;
+            }
+        }
+       
+
+    .features-bar {
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 200px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      font-weight: bold;
+      color: #333;
+      gap: 10px;
+    }
+
+    .feature-item i {
+      color: orange;
+      font-size: 20px;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px solid #ccc;
+      margin: 0 20px 20px 20px;
+    }
+
+    /* Hide feature bar on screens below 768px */
+    @media (max-width: 767px) {
+      .features-bar {
+        display: none;
+      }
+    }
+    /*Terms and Conditions*/
+    .heading-container {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .heading-container h1 {
+      font-size: 26px;
+      font-weight: bold;
+      background: linear-gradient(to right, grey, black);
+      --webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0;
+      flex-wrap: nowrap;
+    }
+
+    .underline {
+      width: 100px;
+      height: 4px;
+      background-color: red;
+      margin: 10px auto 0 auto;
+    }
+    @media(max-width:767px){
+        
+    }
+    /*Document*/
+    .content-container {
+        margin: 0 auto; /* Centers the container */
+        padding: 0 20px; /* Equal padding on left and right */
+        max-width: 1200px; /* Maximum width for large screens */
+    }
+    .content-container h4{
+        margin-left: 50px;
+    }
+    .heading {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 100px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      font-size: 15.5px;
+      margin-bottom: 10px;
+      line-height: 1.9;
+      margin-left: 50px;
+    }
+
+    .highlight {
+      color: red;
+    }
+
+    /* Media Query for Responsiveness */
+    @media (max-width: 768px) {
+      .heading {
+        font-size: 24px;
+        text-align: center;
+      }
+
+      ul li {
+        font-size: 16px;
+        line-height: 1.9;
+      }
+
+      .content-container {
+        margin: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .content-container h4{
+        margin-top: 40px;
+        margin-left: 10px;
+      }
+      .heading {
+    font-size: 20px;
+  }
+
+  ul li {
+    font-size: 14px;
+    line-height: 1.9;
+    margin-left: 10px; /* Optional: reduce left spacing for mobile */
+  }
+
+  .content-container {
+    width: 100%;
+    padding: 0 11px; /* Some breathing space */
+    margin: 0;
+    box-sizing: border-box;
+  }
+    }
+    /*Footer*/
+    .footer {
+            background-color: #222;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+        }
+        .footer-top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .footer-top a{
+            text-decoration: none;
+        }
+        .footer-top h2{
+            font-size: 15px;
+        }
+        .footer-logo {
+            width: 80px;
+            height: auto;
+        }
+        .company-name {
+            font-size: 22px;
+            margin-top: 10px;
+            color: #e9f5e9;
+        }
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .footer-section {
+            width: 30%;
+            margin-bottom: 20px;
+        }
+        .footer-section h3 {
+            border-bottom: 2px solid #e9f5e9;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .footer-section p,
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-section ul li {
+            margin: 8px 0;
+        }
+        .footer-section ul li a {
+            color: #e9f5e9;
+            transition: 0.3s;
+        }
+        .footer-section ul li a:hover {
+            color: #fff;
+        }
+        .fsocial-links {
+            margin: 20px 0;
+        }
+        .fsocial-links a {
+            color: #e9f5e9;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+        .fsocial-links a:hover {
+            color: #fff;
+        }
+        .footer-bottom {
+            background-color: #111;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .footer-section {
+                width: 80%;
+            }
+        }
+
+
+    /* =========================================================
+       LIGHTWEIGHT TERMS PAGE ANIMATIONS
+       Visual design/layout preserved; CSS-only motion.
+       ========================================================= */
+
+    .navbar {
+      animation: termsNavIn 420ms ease-out both;
+    }
+
+    .features-bar {
+      animation: termsFadeIn 520ms ease-out both;
+    }
+
+    .heading-container {
+      animation: termsFadeUp 560ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    /* JS adds reveal-pending only after it is ready.
+       If JS/IntersectionObserver is unavailable, all content stays visible. */
+    .content-container.terms-reveal-pending,
+    .footer.terms-reveal-pending {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+
+    .content-container.terms-reveal-visible,
+    .footer.terms-reveal-visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition:
+        opacity 520ms ease-out,
+        transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .underline {
+      transform-origin: center;
+      animation: termsUnderlineIn 600ms ease-out both;
+    }
+
+    @keyframes termsNavIn {
+      from { opacity: 0.88; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes termsFadeIn {
+      from { opacity: 0.9; }
+      to { opacity: 1; }
+    }
+
+    @keyframes termsFadeUp {
+      from { opacity: 0.92; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes termsUnderlineIn {
+      from { transform: scaleX(0.75); opacity: 0.7; }
+      to { transform: scaleX(1); opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .navbar,
+      .features-bar,
+      .heading-container,
+      .underline {
+        animation: none !important;
+      }
+
+      .content-container.terms-reveal-pending,
+      .content-container.terms-reveal-visible,
+      .footer.terms-reveal-pending,
+      .footer.terms-reveal-visible {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
+  </style>
+  <script>
+    function toggleMenu() {
+        document.querySelector('.nav-links').classList.toggle('active');
+    }
+</script>
+</head>
+<body>
+    <!--Navbar-->
+    <div class="social-links">
+        <a href="mailto:example@gmail.com" target="_blank">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="https://www.instagram.com/wheelz_45/profilecard/?igsh=aXlkZXZvZGpjbXlo" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+    </div>
+    <nav class="navbar" id="nav">
+        <a href="index.html">
+            <img src="logo1.png" alt="Logo" class="logo">
+        </a>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <div class="nav-links">
+            <a href="our-cars.html"><i class="fa-solid fa-car"></i>Our Cars</a>
+            <a href="T&C.html"><i class="fa-solid fa-file-contract"></i>Terms & Conditions</a>
+            <a href="Aboutus.html"><i class="fa-solid fa-info-circle"></i>About Us</a>
+           
+            <a href="car.html" class="book-btn"><i class="fa-solid fa-calendar-check"></i>Book</a>
+            <div class="icons">
+                <a href="mailto:example@gmail.com" target="_blank">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="https://www.instagram.com/wheelz_45/profilecard/?igsh=aXlkZXZvZGpjbXlo" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    
+  <div class="features-bar">
+    <div class="feature-item">
+      
+      <i class="fa-solid fa-gavel"></i>
+      <span>No hidden fee</span>
+    </div>
+    <div class="feature-item">
+      <i class="fas fa-clock"></i>
+      <span>24/7 availability</span>
+    </div>
+    <div class="feature-item">
+      <i class="fas fa-star"></i>
+      <span>Five star customer service</span>
+    </div>
+    <div class="feature-item">
+      <i class="fa-solid fa-ban"></i>
+      <span>Free cancellation</span>
+    </div>
+  </div>
+
+  <hr />
+<!--Terms & Conditions-->
+<div class="heading-container">
+    <h1>TERMS & CONDITIONS</h1>
+    <div class="underline"></div>
+  </div>
+  <!--Documents-->
+  <div class="content-container">
+    <div class="heading">MANDATORY DOCUMENT SUBMISSION</div>
+    
+    <ul>
+      <li>The original driving license must be submitted to us before taking the vehicle,
+         and it will be kept with us until the end of the rental period.
+          Without the submission of the original driving license, 
+          we will not be able to provide you with the car.
+           This requirement ensures that we can verify that the renter is legally 
+           eligible to drive the vehicle and helps maintain safety standards throughout 
+           the rental period. The submission of the driving license is a necessary part of the 
+           rental agreement to avoid any issues during the trip</li>
+
+      <li>Foreign nationals or Non-Resident Indians (NRIs) are allowed to submit their passport
+         as a substitute for a driving license. This option is provided to
+          accommodate individuals who may not possess a local driving license
+          . By submitting the passport, foreign nationals or NRIs can
+           still fulfill the necessary documentation requirements to rent a vehicle.
+            This ensures that all renters, regardless of nationality or residence status
+            , can enjoy a smooth and hassle-free rental experience.</li>
+    </ul>
+  </div>
+  <!--Verification at delivery-->
+  
+  <!--Documents-->
+  <div class="content-container">
+    <div class="heading">VERIFICATION AT DELIVERY</div>
+    <h4>EMPLOYED PERSON</h4>
+    <ul>
+      <li>For employed individuals, 
+        it is mandatory to submit a valid <strong> Employment ID </strong>issued
+         by their current employer. Along with this, a clear copy of the
+         <strong> Aadhar Card </strong>must be provided for identity verification.
+           Both documents must be genuine and current at the time of submission.</li>
+      
+    </ul>
+    <!--Self Employed-->
+    <h4>SELF-EMPLOYED PERSON</h4>
+    <ul>
+      <li>For Self-employed individuals, 
+        For self-employed individuals, it is mandatory to submit a valid <strong> GST Registration Certificate</strong>
+         to confirm your business status.
+         Additionally, a clear and legible copy of your <strong> Aadhar Card </strong> must be 
+         provided for identity verification. Both documents must be genuine 
+         and up-to-date at the time of submission.</li>
+      
+    </ul>
+  </div>
+  <!--Substance Usage-->
+  <div class="content-container">
+  <div class="heading">SUBSTANCE USE POLICY</div>
+    
+    <ul>
+      <li>Carzcloud reserves the right to cancel your booking without a refund if you
+         are found to be under the influence of <strong>alcohol or drugs</strong> at the
+          time of vehicle pick-up. Additionally, the consumption of alcohol
+          , tobacco, or weed inside the vehicle is strictly prohibited.
+           Any violation of this policy will result in a <strong> penalty of ₹10,000 </strong>.</li>
+          </ul>
+  </div>
+
+    <!--prohibition Usage-->
+    <div class="content-container">
+      <div class="heading">PROHIBITION USAGE</div>
+        
+        <ul>
+          <li>Carrying animals or transporting commercial goods in the
+             vehicle is strictly prohibited. This policy ensures the
+              safety and cleanliness of the vehicle for all users.
+               Any attempt to do so will result in immediate cancellation 
+               of your booking. Additionally, vehicles are not to be
+                used for commercial purposes under any circumstances.
+                 Written permission from Carzcloud management must be obtained if
+                  commercial use is necessary.</li>
+              </ul>
+      </div>
+
+      <!--VEHICLE CONDITION RESPONSIBILITY-->
+    <div class="content-container">
+      <div class="heading">VEHICLE CONDITION RESPONSIBILITY</div>
+        
+        <ul>
+          <li>Renters are responsible for documenting the condition of
+             the vehicle both inside and outside using photos and videos
+              before taking delivery. This step ensures that the initial
+               state of the vehicle is clearly recorded. Failure to do so
+                may result in disputes regarding damage. Any new damage found
+                 upon return of the vehicle will be assessed accordingly.
+                  Renters will be charged for any damage identified during
+                   the return inspection.</li>
+              </ul>
+      </div>
+
+      <!--PICK-UP & DELIVERY POLICY -->
+    <div class="content-container">
+      <div class="heading">PICK-UP & DELIVERY POLICY</div>
+        
+        <ul>
+          <li>For self-pickup, punctuality is essential. Delays in pickup
+             will not result in any changes to the booking time or charges.
+              It is the renter's responsibility to ensure they arrive on time
+               for the pickup. For doorstep delivery, the delivery time may vary
+                depending on the availability of the driver and traffic conditions
+                . The actual start time of the trip will be determined based on
+                 the time of delivery.</li>
+              </ul>
+      </div>
+
+      <!--BREAKDOWN ASSISTANCE -->
+    <div class="content-container">
+      <div class="heading">BREAKDOWN ASSISTANCE</div>
+        
+        <ul>
+          <li>In the event of a breakdown, it is important that you do not
+             attempt to touch or tamper with any parts of the car.
+              For your safety and to avoid further damage, immediately contact
+               the Carzcloud Team. The team will provide you with specific instructions
+                on how to proceed. Follow their guidance carefully to ensure proper
+                 handling of the situation. Any unauthorized handling of the vehicle
+                  may result in penalties or additional charges</li>
+              </ul>
+      </div>
+
+      <!--TRIP EXTENSION POLICY -->
+    <div class="content-container">
+      <div class="heading">TRIP EXTENSION POLICY</div>
+        
+        <ul>
+          <li>The car must be returned at the scheduled time to avoid any
+             inconvenience. If you wish to extend your trip, it is
+              important to notify us at least 4 hours in advance. This
+               allows us to make the necessary arrangements and ensure availability. 
+               Failure to inform us on time will result in a penalty. The penalty 
+               amount will vary depending on the type of car rent.</li>
+              </ul>
+      </div>
+      <!--CANCELLATION POLICY -->
+    <div class="content-container">
+      <div class="heading">CANCELLATION POLICY </div>
+        
+        <ul>
+          <li>The car must be returned at the scheduled time as agreed 
+            during the booking. If you wish to extend your trip, you
+             must notify us at least 4 hours before the scheduled return time
+             . Extensions are subject to availability and must be approved by the
+              Carzcloud team. Failure to inform us in advance may result in a penalty
+               being applied. The penalty amount will vary based on the type of
+                vehicle rented and the duration of the delay</li>
+              </ul>
+      </div>
+
+       <!--Footer-->
+ <footer class="footer">
+  <div class="footer-top">
+      <a href="index.html">
+      <img src="logo1.png" alt="Company Logo" class="footer-logo">
+      <h2 class="company-name">Carzcloud</h2>
+  </a>
+  </div>
+  
+  <div class="footer-container">
+      <div class="footer-section">
+          <h3>About Us</h3>
+          <p>We provide the best rental car services, ensuring comfort and affordability.</p>
+          <p>Our customers are our top priority, every time. This isn’t just a statement—it’s a promise that every team member upholds to meet and exceed customer expectations.</p>
+      </div>
+      <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="our-cars.html">Our cars</a></li>
+            <li><a href="T&C.html">Terms & Conditions</a></li>
+            <li><a href="Aboutus.html">Aboutus</a></li>
+              
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: <a href="mailto:info@yourrental.com">carzcloud45.com</a></p>
+          <p>Phone: +91 9597703567</p>
+          <p>Location: Trichy</p>
+      </div>
+  </div>
+
+  <div class="fsocial-links">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/919876543210" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+  </div>
+
+  <div class="footer-bottom">
+      <p>&copy; 2026 Carzcloud | All Rights Reserved</p>
+  </div>
+</footer>
+
+    
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const revealSections = document.querySelectorAll(".content-container");
+  const footer = document.querySelector(".footer");
+
+  if (!("IntersectionObserver" in window)) return;
+
+  const targets = [...revealSections];
+  if (footer) targets.push(footer);
+
+  const observer = new IntersectionObserver((entries, currentObserver) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("terms-reveal-pending");
+        entry.target.classList.add("terms-reveal-visible");
+        currentObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: "0px 0px 35px 0px"
+  });
+
+  targets.forEach((element) => {
+    element.classList.add("terms-reveal-pending");
+    observer.observe(element);
+  });
+});
+</script>
+
+</body>
+</html>
