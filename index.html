@@ -26,7 +26,7 @@
         <a href="mailto:wheelzcode45@gmail.com" target="_blank">
             <i class="fa-solid fa-envelope"></i>
         </a>
-        <a href="https://www.instagram.com" target="_blank">
+        <a href="https://www.instagram.com/carzcloud.in?psln=NXhmYTh5NDllem9y&utm_source=qr" target="_blank">
             <i class="fa-brands fa-instagram"></i>
         </a>
         <a href="https://www.facebook.com" target="_blank">
@@ -49,7 +49,7 @@
                 <a href="mailto:wheelzcode45@gmail.com?subject=Booking Enquiry&body=Hi, I want to book a car." target="_blank">
                     <i class="fa-solid fa-envelope" style="color: white;"></i>
                 </a>
-                <a href="https://www.instagram.com/wheelz_45/profilecard/?igsh=aXlkZXZvZGpjbXlo" target="_blank">
+                <a href="https://www.instagram.com/carzcloud.in?psln=NXhmYTh5NDllem9y&utm_source=qr" target="_blank">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
                 <a href="https://www.facebook.com" target="_blank">
@@ -217,51 +217,95 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const now = new Date();
-      function pad(n) { return n < 10 ? '0' + n : n; }
-      const year = now.getFullYear();
-      const month = pad(now.getMonth() + 1);
-      const day = pad(now.getDate());
-      const hour = pad(now.getHours());
-      const minute = pad(now.getMinutes());
-      const currentDate = `${year}-${month}-${day}`;
-      const currentTime = `${hour}:${minute}`;
-      document.getElementById('pickup-date').value = currentDate;
-      document.getElementById('pickup-time').value = currentTime;
+      const pickupDateInput = document.getElementById('pickup-date');
+      const pickupTimeSelect = document.getElementById('pickup-time');
+      const dropoffDateInput = document.getElementById('dropoff-date');
+      const dropoffTimeSelect = document.getElementById('dropoff-time');
 
-      const dropoff = new Date(now.getTime() + 2 * 60 * 60 * 1000);
-      const dropYear = dropoff.getFullYear();
-      const dropMonth = pad(dropoff.getMonth() + 1);
-      const dropDay = pad(dropoff.getDate());
-      const dropHour = pad(dropoff.getHours());
-      const dropMinute = pad(dropoff.getMinutes());
-      const dropoffDate = `${dropYear}-${dropMonth}-${dropDay}`;
-      const dropoffTime = `${dropHour}:${dropMinute}`;
-      document.getElementById('dropoff-date').value = dropoffDate;
-      document.getElementById('dropoff-time').value = dropoffTime;
+      // Format local dates without UTC conversion (avoids date shifting).
+      function formatDateLocal(date) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+      }
+
+      // Convert a Date into the exact AM/PM label used by the existing dropdown.
+      function formatTimeLabel(date) {
+        let hours = date.getHours();
+        const minutes = date.getMinutes() < 30 ? '00' : '30';
+        const suffix = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12 || 12;
+        return `${hours}:${minutes} ${suffix}`;
+      }
+
+      // Round up to the next available 30-minute dropdown option.
+      const pickupDefault = new Date();
+      pickupDefault.setSeconds(0, 0);
+      pickupDefault.setMinutes(pickupDefault.getMinutes() < 30 ? 30 : 60);
+
+      const dropoffDefault = new Date(pickupDefault.getTime() + 2 * 60 * 60 * 1000);
+
+      pickupDateInput.value = formatDateLocal(pickupDefault);
+      pickupTimeSelect.value = formatTimeLabel(pickupDefault);
+      dropoffDateInput.value = formatDateLocal(dropoffDefault);
+      dropoffTimeSelect.value = formatTimeLabel(dropoffDefault);
+
+      // Prevent selecting dates in the past.
+      const today = formatDateLocal(new Date());
+      pickupDateInput.min = today;
+      dropoffDateInput.min = today;
+
+      // Keep drop-off after pick-up and synchronize the minimum drop-off date.
+      function validateBookingDates(showMessage = false) {
+        const pickupDate = pickupDateInput.value;
+        const dropoffDate = dropoffDateInput.value;
+        if (pickupDate) dropoffDateInput.min = pickupDate;
+
+        if (!pickupDate || !pickupTimeSelect.value || !dropoffDate || !dropoffTimeSelect.value) {
+          return false;
+        }
+
+        const pickup = combineDateAndTime(pickupDate, pickupTimeSelect.value);
+        const dropoff = combineDateAndTime(dropoffDate, dropoffTimeSelect.value);
+        const now = new Date();
+
+        if (pickup < now) {
+          if (showMessage) alert('Pick-up date and time cannot be in the past.');
+          return false;
+        }
+        if (dropoff <= pickup) {
+          if (showMessage) alert('Drop-off must be after the pick-up date and time.');
+          return false;
+        }
+        return true;
+      }
+
+      function combineDateAndTime(dateValue, timeLabel) {
+        const match = timeLabel.match(/^(\d{1,2}):(\d{2})\s(AM|PM)$/i);
+        if (!match) return new Date(NaN);
+        let hours = Number(match[1]) % 12;
+        if (match[3].toUpperCase() === 'PM') hours += 12;
+        const result = new Date(`${dateValue}T00:00:00`);
+        result.setHours(hours, Number(match[2]), 0, 0);
+        return result;
+      }
+
+      pickupDateInput.addEventListener('change', () => validateBookingDates(false));
+      pickupTimeSelect.addEventListener('change', () => validateBookingDates(false));
+      dropoffDateInput.addEventListener('change', () => validateBookingDates(false));
+      dropoffTimeSelect.addEventListener('change', () => validateBookingDates(false));
+
+      // Expose helper for the Search button below.
+      window.carzcloudCombineDateAndTime = combineDateAndTime;
+      window.carzcloudValidateBookingDates = validateBookingDates;
     });
   </script>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const datetimeInputs = document.querySelectorAll('input[type="datetime-local"]');
-      function pad(n) { return n < 10 ? '0' + n : n; }
-      const now = new Date();
-      const year = now.getFullYear();
-      const month = pad(now.getMonth() + 1);
-      const day = pad(now.getDate());
-      const hour = pad(now.getHours());
-      const minute = pad(now.getMinutes());
-      const currentDateTime = `${year}-${month}-${day}T${hour}:${minute}`;
-      datetimeInputs.forEach(input => {
-        input.min = currentDateTime;
-        input.value = currentDateTime;
-      });
-    });
-  </script>
+
 
     <script>
-        document.getElementById("searchBtn").addEventListener("click", function () {
+      document.getElementById("searchBtn").addEventListener("click", function () {
         const pickupDate = document.getElementById("pickup-date").value;
         const pickupTime = document.getElementById("pickup-time").value;
         const dropoffDate = document.getElementById("dropoff-date").value;
@@ -269,15 +313,39 @@
         const carType = document.getElementById("carType").value;
 
         if (!pickupDate || !pickupTime || !dropoffDate || !dropoffTime || !carType) {
-            alert("Please fill in all fields!");
-            return;
+          alert("Please fill in all fields!");
+          return;
         }
 
-        const pickup = `${pickupDate}T${pickupTime}`;
-        const dropoff = `${dropoffDate}T${dropoffTime}`;
-        const query = `pickup=${encodeURIComponent(pickup)}&dropoff=${encodeURIComponent(dropoff)}&carType=${encodeURIComponent(carType)}`;
-        window.location.href = `car.html?${query}`;
+        const combineDateAndTime = window.carzcloudCombineDateAndTime;
+        const pickupDateTime = combineDateAndTime(pickupDate, pickupTime);
+        const dropoffDateTime = combineDateAndTime(dropoffDate, dropoffTime);
+        const now = new Date();
+
+        if (pickupDateTime < now) {
+          alert("Pick-up date and time cannot be in the past.");
+          return;
+        }
+
+        if (dropoffDateTime <= pickupDateTime) {
+          alert("Drop-off must be after the pick-up date and time.");
+          return;
+        }
+
+        // Pass standardized local date-time strings to car.html.
+        function toLocalDateTimeValue(date) {
+          const pad = value => String(value).padStart(2, "0");
+          return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}`;
+        }
+
+        const query = new URLSearchParams({
+          pickup: toLocalDateTimeValue(pickupDateTime),
+          dropoff: toLocalDateTimeValue(dropoffDateTime),
+          carType: carType
         });
+
+        window.location.href = `car.html?${query.toString()}`;
+      });
     </script>
 
 
@@ -296,38 +364,7 @@
     
               
 
-    <script>
-        function searchCars() {
-            const carType = document.getElementById("car-type").value;
-            const from = document.getElementById("from").value;
-            const to = document.getElementById("to").value;
-            const date = document.getElementById("date").value;
-            const time = document.getElementById("time").value;
 
-            // Logic to navigate based on car type
-            if (carType === "large") {
-                window.location.href = "large-cars.html?from=" + from + "&to=" + to + "&date=" + date + "&time=" + time;
-            } else if (carType === "medium") {
-                window.location.href = "medium-cars.html?from=" + from + "&to=" + to + "&date=" + date + "&time=" + time;
-            } else {
-                window.location.href = "our-cars.html#sedan?from=" + from + "&to=" + to + "&date=" + date + "&time=" + time;
-            }
-        }
-
-        function setDefaultDate() {
-            let today = new Date();
-            let formattedDate = today.toISOString().split('T')[0];
-            document.getElementById('pickup-date').value = formattedDate;
-            document.getElementById('dropoff-date').value = formattedDate;
-        }
-        
-        
-
-        document.getElementById('pickup-date').addEventListener('change', validateDateTime);
-        document.getElementById('dropoff-date').addEventListener('change', validateDateTime);
-
-        setDefaultDate();
-    </script>
         <div class="features">
             <div class="feature-item">
                 <i class="fa-solid fa-gavel"></i>
@@ -537,7 +574,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     <div class="fsocial-links">
         <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/carzcloud.in?psln=NXhmYTh5NDllem9y&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://wa.me/919876543210" target="_blank"><i class="fab fa-whatsapp"></i></a>
         
     </div>

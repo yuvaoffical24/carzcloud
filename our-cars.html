@@ -16,7 +16,7 @@
     <a href="mailto:example@gmail.com" target="_blank">
         <i class="fa-solid fa-envelope"></i>
     </a>
-    <a href="https://www.instagram.com" target="_blank">
+    <a href="https://www.instagram.com/carzcloud.in?psln=NXhmYTh5NDllem9y&utm_source=qr" target="_blank">
         <i class="fa-brands fa-instagram"></i>
     </a>
     <a href="https://www.facebook.com" target="_blank">
@@ -31,7 +31,7 @@
     <div class="nav-links">
         <!-- Mobile Car Links inside Hamburger Menu -->
         <div class="mobile-car-links">
-            <a href="#">Sedan</a>
+            <a href="#sedan">Sedan</a>
             <a href="#hatchback">Hatchback</a>
             <a href="#suv">SUV</a>
             <a href="#mpv">MPV</a>
@@ -265,7 +265,7 @@ function toggleMenu() {
         <p><i class="fas fa-suitcase"></i> 2 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol & CNG</p>
         <hr>
         <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2025</p> <!-- Year with calendar icon -->
-        <a href="#" class="car-book-btn whatsapp-link" data-car="Wagnor">Book Now</a>
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Tata Tiago">Book Now</a>
     </div>
 
     
@@ -297,7 +297,7 @@ function toggleMenu() {
         <p><i class="fas fa-suitcase"></i> 3 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
         <hr>
         <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2023</p> <!-- Year with calendar icon -->
-        <a href="#" class="car-book-btn whatsapp-link" data-car="Tata Nexan">Book Now</a>
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Tata Nexon">Book Now</a>
     </div>
     <!-- Car 3 -->
     <div class="car-card">
@@ -363,7 +363,7 @@ function toggleMenu() {
         <p> <i class="fas fa-gas-pump"></i> Diesel</p>
         <hr>
         <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2024</p> <!-- Year with calendar icon -->
-        <a href="#" class="car-book-btn whatsapp-link" data-car="innova">Book Now</a>
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Thar">Book Now</a>
     </div>
     
     
@@ -398,7 +398,7 @@ function toggleMenu() {
         <p><i class="fas fa-suitcase"></i> 2 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Diesel</p>
         <hr>
         <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2022</p> <!-- Year with calendar icon -->
-        <a href="#" class="car-book-btn whatsapp-link" data-car="Crista">Book Now</a>
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Toyota Crysta">Book Now</a>
     </div>
     <!-- Car 3 -->
     <div class="car-card">
@@ -439,7 +439,7 @@ function toggleMenu() {
         <p><i class="fas fa-suitcase"></i> 3 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
         <hr>
         <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2024</p> <!-- Year with calendar icon -->
-        <a href="#" class="car-book-btn whatsapp-link" data-car="KIA Careams">Book Now</a>
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Kia Carens">Book Now</a>
     </div>
 
     <!-- Car 6 -->
@@ -468,7 +468,7 @@ function toggleMenu() {
         <p><i class="fas fa-suitcase"></i> 3 Suitcase <span class="vertical-line"></span> <i class="fas fa-gas-pump"></i> Petrol</p>
         <hr>
         <p class="car-year"><i class="fas fa-chart-column"></i> Model : 2024</p> <!-- Year with calendar icon -->
-        <a href="#" class="car-book-btn whatsapp-link" data-car="innova">Book Now</a>
+        <a href="#" class="car-book-btn whatsapp-link" data-car="Innova Hycross">Book Now</a>
     </div>
       
 
@@ -525,7 +525,7 @@ function toggleMenu() {
 
   <div class="fsocial-links">
       <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com/wheelz_45/profilecard/?igsh=aXlkZXZvZGpjbXlo" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.instagram.com/carzcloud.in?psln=NXhmYTh5NDllem9y&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
       <a href="https://wa.me/919876543210" target="_blank"><i class="fab fa-whatsapp"></i></a>
       
   </div>
@@ -536,6 +536,68 @@ function toggleMenu() {
 </footer>
 
 
+
+<script>
+/*
+ * Category filter:
+ * - #suv shows only the SUV heading and SUV cards.
+ * - #sedan, #hatchback and #mpv behave the same way.
+ * - No category hash means show all categories.
+ * No CSS or layout changes are required.
+ */
+document.addEventListener("DOMContentLoaded", function () {
+    const categories = ["sedan", "hatchback", "suv", "mpv"];
+
+    function applyCategoryFilter() {
+        const selectedCategory = window.location.hash
+            .replace("#", "")
+            .trim()
+            .toLowerCase();
+
+        const filterActive = categories.includes(selectedCategory);
+
+        categories.forEach(function (category) {
+            const heading = document.getElementById(category);
+            if (!heading) return;
+
+            const cardsContainer = heading.nextElementSibling;
+            const isCategoryContainer =
+                cardsContainer && cardsContainer.classList.contains("car-container");
+
+            const shouldShow = !filterActive || category === selectedCategory;
+
+            // Inline display ensures the filter works even if the stylesheet
+            // explicitly sets display on headings or car containers.
+            heading.style.display = shouldShow ? "" : "none";
+            if (isCategoryContainer) {
+                cardsContainer.style.display = shouldShow ? "" : "none";
+            }
+        });
+
+        // If the selected hash is a category, bring its heading into view.
+        if (filterActive) {
+            const heading = document.getElementById(selectedCategory);
+            if (heading) {
+                requestAnimationFrame(function () {
+                    heading.scrollIntoView({ block: "start", behavior: "auto" });
+                });
+            }
+        }
+    }
+
+    applyCategoryFilter();
+    window.addEventListener("hashchange", applyCategoryFilter);
+
+    // Close the mobile navigation after a category link is selected.
+    document.querySelectorAll(".mobile-car-links a, .desktop-car-links a")
+        .forEach(function (link) {
+            link.addEventListener("click", function () {
+                const navLinks = document.querySelector(".nav-links");
+                if (navLinks) navLinks.classList.remove("active");
+            });
+        });
+});
+</script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
